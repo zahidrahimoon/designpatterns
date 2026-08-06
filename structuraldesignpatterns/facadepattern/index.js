@@ -1,20 +1,9 @@
-// Raw fetch API is messy; this facade simplifies it
-const APIClient = {
-    async getJSON(url) {
-      const response = await fetch(url);
-      return response.json();
-    },
-    async postJSON(url, data) {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-      return response.json();
-    }
-  };
-  
-  // ✅ Easy usage
-  APIClient.getJSON("https://api.example.com/users").then(console.log);
-  APIClient.postJSON("https://api.example.com/users", { name: "Zahid" });
-  
+// Facade: one simple function hides several subsystems and their correct order.
+
+const freezeCpu = () => "cpu frozen";
+const readDisk = () => "disk read";
+const loadMemory = () => "memory loaded";
+
+const startComputer = () => [freezeCpu(), readDisk(), loadMemory()].join(" -> ");
+
+console.log(startComputer()); // cpu frozen -> disk read -> memory loaded
