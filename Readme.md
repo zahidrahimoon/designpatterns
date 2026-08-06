@@ -10,8 +10,6 @@ Every pattern has a **minimal, runnable, function-based** example: plain functio
 
 **Everyone is welcome to contribute, ask questions, or suggest improvements!**
 
----
-
 ## 📚 Table of Contents
 
 - [What Are Design Patterns?](#what-are-design-patterns)
@@ -25,8 +23,6 @@ Every pattern has a **minimal, runnable, function-based** example: plain functio
 - [JavaScript Tips](#javascript-tips)
 - [How to Contribute](#how-to-contribute)
 - [License](#license)
-
----
 
 ## What Are Design Patterns?
 
@@ -45,8 +41,6 @@ The 23 patterns are divided into three categories based on their **intent**:
 | Structural | *How do I assemble objects into bigger structures?* | 7 |
 | Behavioral | *How do objects communicate and share responsibility?* | 11 |
 
----
-
 ## Why Use Design Patterns?
 
 - **Save time:** No need to reinvent the wheel.
@@ -57,34 +51,7 @@ The 23 patterns are divided into three categories based on their **intent**:
 > Use patterns when they make your code simpler or solve a real problem.  
 > Don't use them just for the sake of it!
 
----
-
-## How to Run the Examples
-
-Every example is a plain Node.js file with no dependencies. Each one prints its result, so you can watch the pattern work:
-
-```bash
-node creationaldesignpatterns/singleton/index.js
-```
-
-Every file has the same shape—one line explaining the core idea, then the smallest code that shows it:
-
-```js
-// Singleton: one instance, shared everywhere. A closure holds it.
-
-const getConfig = (() => { ... })();
-
-getConfig().set("theme", "dark");
-console.log(getConfig().get("theme")); // dark
-```
-
-The only comments in the code are the core-idea line and the expected output, so nothing gets in the way of reading it.
-
----
-
 ## Types of Design Patterns
-
----
 
 ### 🏗️ Creational Patterns (5)
 
@@ -130,8 +97,6 @@ These patterns focus on **object creation mechanisms**, trying to create objects
 - **In the code:** an IIFE closure holds `instance`. The first call builds it, every later call returns the same object—which is why `getConfig() === getConfig()` is `true`.
 - **Use it when:** you need one shared config, cache, logger, or connection.
 - [See code example](./creationaldesignpatterns/singleton/index.js)
-
----
 
 ### 🧱 Structural Patterns (7)
 
@@ -192,8 +157,6 @@ These patterns deal with **object composition**—how to assemble objects into l
 - **In the code:** `withCache(fetchUser)` returns a function with the exact same signature, but the second call is served from the `Map`—run it and you'll see "hitting the api" printed only once.
 - **Use it when:** you want caching, lazy loading, logging, or permission checks around something.
 - [See code example](./structuraldesignpatterns/proxypattern/index.js)
-
----
 
 ### 🧠 Behavioral Patterns (11)
 
@@ -289,8 +252,6 @@ These patterns are concerned with **algorithms, communication, and the assignmen
 - **Use it when:** the set of object types is stable but you keep adding new operations over them.
 - [See code example](./behavioraldesignpatterns/visitorpattern/index.js)
 
----
-
 ## Quick Cheat Sheet
 
 | # | Pattern | Family | One-line idea |
@@ -319,8 +280,6 @@ These patterns are concerned with **algorithms, communication, and the assignmen
 | 22 | [Template Method](./behavioraldesignpatterns/templatemethodpattern/index.js) | Behavioral | Fixed steps, custom details |
 | 23 | [Visitor](./behavioraldesignpatterns/visitorpattern/index.js) | Behavioral | New operations, same objects |
 
----
-
 ## JavaScript Tips
 
 - The patterns were written for class-based languages, but JavaScript gives you **closures, first-class functions, and object literals**—so most of them shrink to a few lines. That's the style used throughout this repo.
@@ -330,8 +289,6 @@ These patterns are concerned with **algorithms, communication, and the assignmen
   - **Lookup objects** replace subclass hierarchies (Factory, Strategy, State, Visitor).
 - Patterns are ideas, not strict rules—adapt them to what makes sense for your project.
 - Keep your code simple and easy to read. If a pattern makes it harder, drop the pattern.
-
----
 
 ## How to Contribute
 
@@ -345,10 +302,6 @@ If you want to improve an example, fix something, or make this guide even easier
 
 Questions and suggestions are always welcome—just open an issue or pull request!
 
----
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
